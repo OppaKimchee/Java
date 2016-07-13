@@ -18,15 +18,19 @@ public class Palindrome {
         
         System.out.print("Type a Palindrome: ");
         Scanner input = new Scanner(System.in);
-        String word = input.next();
-        String wordBack = word;
+        String word = input.nextLine();
+        String wordBack = "";
         
-        for ( int i = word.length() - 1; i >= 0; i-- ){
+        word= word.replaceAll("[\\W]","");
+        System.out.println(word);
+        for ( int i = word.length()-1; i >= 0; i-- ){
             wordBack += word.charAt(i);
         }
+        
         System.out.println(word);
         System.out.println(wordBack);
-        if(wordBack == word){
+        
+        if((wordBack).equals(word)){
             System.out.println("yay");
         }
         else{
